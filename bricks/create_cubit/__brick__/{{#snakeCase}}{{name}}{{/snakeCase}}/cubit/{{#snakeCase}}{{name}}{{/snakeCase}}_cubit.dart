@@ -7,7 +7,17 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 {{^freezed}}
 import 'package:meta/meta.dart';
 {{/freezed}}
-import '../../../app/core/enums.dart';
+import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/app/core/enums.dart';
+
+
+
+{{#is_results_type_custom_model}}
+import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/domain/models/plan_model.dart';
+{{/is_results_type_custom_model}}
+
+
+
+
 
 {{#freezed}}
 part '{{#snakeCase}}{{name}} cubit{{/snakeCase}}.freezed.dart';
