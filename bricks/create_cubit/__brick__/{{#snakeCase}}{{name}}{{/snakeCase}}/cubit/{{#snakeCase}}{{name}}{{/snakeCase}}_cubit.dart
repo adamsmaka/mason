@@ -15,9 +15,8 @@ import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/app/core/enums.dart';
 import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/domain/models/plan_model.dart';
 {{/is_results_type_custom_model}}
 
-
-
-
+{{#repositories}}import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/domain/repositories/{{#snakeCase}}{{repository}} repository{{/snakeCase}}.dart';
+{{/repositories}}
 
 {{#freezed}}
 part '{{#snakeCase}}{{name}} cubit{{/snakeCase}}.freezed.dart';

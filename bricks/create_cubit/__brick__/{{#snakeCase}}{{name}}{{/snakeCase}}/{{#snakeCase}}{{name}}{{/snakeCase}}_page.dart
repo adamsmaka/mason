@@ -12,7 +12,7 @@ class {{#pascalCase}}{{name}}Page{{/pascalCase}} extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('{{#titleCase}}{{name}}{{/titleCase}}')),
       body: BlocProvider<{{#pascalCase}}{{name}}Cubit{{/pascalCase}}>(
-        create: (context) => {{#pascalCase}}{{name}}Cubit{{/pascalCase}}(),
+        create: (context) => {{#pascalCase}}{{name}}Cubit{{/pascalCase}}({{#repositories}}{{#pascalCase}}{{repository}} repository{{/pascalCase}}(),{{/repositories}}),
         child: BlocBuilder<{{#pascalCase}}{{name}}Cubit{{/pascalCase}}, {{#pascalCase}}{{name}}State{{/pascalCase}}>(
           builder: (context, state) {
             return const Center(
