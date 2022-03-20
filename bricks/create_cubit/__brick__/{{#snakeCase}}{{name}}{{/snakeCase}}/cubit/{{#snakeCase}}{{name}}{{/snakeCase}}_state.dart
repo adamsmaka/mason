@@ -6,7 +6,7 @@ part of '{{#snakeCase}}{{name}}{{/snakeCase}}_cubit.dart';
 @freezed
 class {{#pascalCase}}{{name}} state{{/pascalCase}} with _${{#pascalCase}}{{name}} state{{/pascalCase}} {
   const factory {{#pascalCase}}{{name}} state{{/pascalCase}}({
-    @Default([]) List<String> results,
+    @Default([]) List<{{#pascalCase}}{{results_type}}{{/pascalCase}}> results,
     @Default(Status.initial) Status status,
     String? errorMessage,
   }) = _{{#pascalCase}}{{name}} state{{/pascalCase}};
@@ -22,7 +22,7 @@ class {{#pascalCase}}{{name}} state{{/pascalCase}} {
     this.errorMessage,
   });
 
-  final List<String> results;
+  final List<{{#pascalCase}}{{results_type}}{{/pascalCase}}> results;
   final Status status;
   final String? errorMessage;
 }

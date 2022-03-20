@@ -1,5 +1,6 @@
 {
     "name": "home",
+    "results_type": "int",
     "freezed": false,
     "repositories": [
         {
