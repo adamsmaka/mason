@@ -1,0 +1,2 @@
+// {{#titleCase}}{{name}}{{/titleCase}}
+// Copyright (c) 2022, Adam Smaka
