@@ -2,10 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'cubit/{{#snakeCase}}{{name}}_cubit{{/snakeCase}}.dart';
 
 {{#repositories}}import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/domain/repositories/{{#snakeCase}}{{repository}} repository{{/snakeCase}}.dart';
 {{/repositories}}
+
+import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/features/{{#snakeCase}}{{name}}{{/snakeCase}}/cubit/{{#snakeCase}}{{name}}_cubit{{/snakeCase}}.dart';
 
 class {{#pascalCase}}{{name}}Page{{/pascalCase}} extends StatelessWidget {
   const {{#pascalCase}}{{name}}Page{{/pascalCase}}({Key? key}) : super(key: key);
