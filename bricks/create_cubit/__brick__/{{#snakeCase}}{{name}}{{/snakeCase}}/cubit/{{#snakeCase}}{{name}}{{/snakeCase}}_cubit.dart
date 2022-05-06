@@ -7,12 +7,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 {{^freezed}}
 import 'package:meta/meta.dart';
 {{/freezed}}
+import 'package:injectable/injectable.dart';
 import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/app/core/enums.dart';
 
-
-
 {{#is_results_type_custom_model}}
-import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/domain/models/plan_model.dart';
+import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/domain/models/{{#snakeCase}}{{results_type}}{{/snakeCase}}.dart';
 {{/is_results_type_custom_model}}
 
 {{#repositories}}import 'package:{{#snakeCase}}{{app_name}}{{/snakeCase}}/domain/repositories/{{#snakeCase}}{{repository}} repository{{/snakeCase}}.dart';
@@ -23,6 +22,7 @@ part '{{#snakeCase}}{{name}} cubit{{/snakeCase}}.freezed.dart';
 {{/freezed}}
 part '{{#snakeCase}}{{name}} state{{/snakeCase}}.dart';
 
+@injectable
 class {{#pascalCase}}{{name}} cubit{{/pascalCase}} extends Cubit<{{#pascalCase}}{{name}} state{{/pascalCase}}> {
   {{#pascalCase}}{{name}}{{/pascalCase}}Cubit(
     {{#repositories}}this._{{#camelCase}}{{repository}} repository{{/camelCase}},
