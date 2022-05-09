@@ -15,7 +15,18 @@ class {{#pascalCase}}{{name}}Page{{/pascalCase}} extends StatelessWidget {
       appBar: AppBar(title: const Text('{{#titleCase}}{{name}}{{/titleCase}}')),
       body: BlocProvider<{{#pascalCase}}{{name}}Cubit{{/pascalCase}}>(
         create: (context) => getIt(),
-        child: BlocBuilder<{{#pascalCase}}{{name}}Cubit{{/pascalCase}}, {{#pascalCase}}{{name}}State{{/pascalCase}}>(
+        child: BlocConsumer<{{#pascalCase}}{{name}}Cubit{{/pascalCase}}, {{#pascalCase}}{{name}}State{{/pascalCase}}>(
+          listener: (context, state) {
+            final errorMsg = state.errorMessage;
+            if (errorMsg != null && state.status == Status.error) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(errorMsg),
+                  backgroundColor: Colors.red,
+                ),
+              );
+            }
+          },
           builder: (context, state) {
             return const Center(
                   child: Text('{{#titleCase}}{{name}}{{/titleCase}}'),
