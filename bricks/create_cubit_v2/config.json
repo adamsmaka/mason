@@ -1,0 +1,15 @@
+{
+    "name": "home",
+    "app_name": "takeaction",
+    "results_type": "int",
+    "is_results_type_custom_model": false,
+    "freezed": false,
+    "repositories": [
+        {
+            "repository": "items"
+        },
+        {
+            "repository": "users"
+        }
+    ]
+}
