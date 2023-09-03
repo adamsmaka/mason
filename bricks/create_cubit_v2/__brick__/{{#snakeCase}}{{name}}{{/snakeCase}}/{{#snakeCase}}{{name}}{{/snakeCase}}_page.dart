@@ -1,6 +1,7 @@
+{{> common_header.md }}
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_wcs/data/repositories/repositories.dart';
 
 class {{#pascalCase}}{{name}}Page{{/pascalCase}} extends StatefulWidget {
   const {{#pascalCase}}{{name}}Page{{/pascalCase}}({super.key});
