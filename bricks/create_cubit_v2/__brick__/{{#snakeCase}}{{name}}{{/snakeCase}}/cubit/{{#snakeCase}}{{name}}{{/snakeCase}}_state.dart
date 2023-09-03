@@ -9,7 +9,13 @@ final class InitialState extends {{#pascalCase}}{{name}}State{{/pascalCase}} {}
 
 final class LoadingState extends {{#pascalCase}}{{name}}State{{/pascalCase}} {}
 
-final class DoneState extends {{#pascalCase}}{{name}}State{{/pascalCase}} {}
+final class LoadedState extends {{#pascalCase}}{{name}}State{{/pascalCase}} {}
+
+  final List<{{#pascalCase}}{{results_type}}{{/pascalCase}}> items;
+
+  LoadedState({
+    required this.items,
+  });
 
 final class ErrorState extends {{#pascalCase}}{{name}}State{{/pascalCase}} {
   final String errorMsg;

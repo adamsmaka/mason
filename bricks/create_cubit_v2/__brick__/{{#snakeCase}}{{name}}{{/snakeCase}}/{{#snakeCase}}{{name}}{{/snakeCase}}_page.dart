@@ -24,7 +24,7 @@ class {{#pascalCase}}{{name}}Page{{/pascalCase}}State extends State<{{#pascalCas
               break;
             case LoadingState():
               break;
-            case DoneState():
+            case LoadedState():
               //Navigator.of(context).pop();
               break;
             case ErrorState():
@@ -61,7 +61,7 @@ class {{#pascalCase}}{{name}}Page{{/pascalCase}}State extends State<{{#pascalCas
               child: CircularProgressIndicator(),
             ),
           );
-            case DoneState():
+            case LoadedState():
               return const SizedBox.shrink();
             case InitialState():
             case ErrorState():

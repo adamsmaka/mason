@@ -9,16 +9,19 @@ part '{{#snakeCase}}{{name}} state{{/snakeCase}}.dart';
 class {{#pascalCase}}{{name}}Cubit{{/pascalCase}} extends Cubit<{{#pascalCase}}{{name}}State{{/pascalCase}}> {
   {{#pascalCase}}{{name}}{{/pascalCase}}Cubit(
     {{#repositories}}this._{{#camelCase}}{{repository}} repository{{/camelCase}},
+    required this.userId,
   {{/repositories}}) : super(InitialState());
 
   {{#repositories}}final {{#pascalCase}}{{repository}} repository{{/pascalCase}} _{{#camelCase}}{{repository}} repository{{/camelCase}};
   {{/repositories}}
+  final String userId;
 
   Future<void> doSomething() async {
     emit(LoadingState());
     try {
-      //await repository //
-      emit(DoneState());
+      //await repository 
+      // final progressModels = await progressRepository.getProgressEntriesByUserId(userId);
+      emit(LoadedState());
     } catch (exception) {
       emit(
         ErrorState('$exception'),
