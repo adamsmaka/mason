@@ -33,7 +33,7 @@ class {{#pascalCase}}{{name}}Page{{/pascalCase}}State extends State<{{#pascalCas
                 builder: (BuildContext context) {
                   return AlertDialog(
                     title: const Text('Error'),
-                    content: Text(state.errorMsg),
+                    content: SelectableText(state.errorMsg),
                     actions: <Widget>[
                       TextButton(
                         child: const Text('Close'),
