@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_wcs/data/repositories/repositories.dart';
-import 'package:my_wcs/domain/models/topic_model.dart';
-import 'package:my_wcs/features/add_progress/cubit/add_progress_cubit.dart';
-import 'package:my_wcs/features/add_topic/add_topic_screen.dart';
 
 class {{#pascalCase}}{{name}}Page{{/pascalCase}} extends StatefulWidget {
   const {{#pascalCase}}{{name}}Page{{/pascalCase}}({super.key});
